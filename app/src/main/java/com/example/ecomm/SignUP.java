@@ -3,6 +3,7 @@ package com.example.ecomm;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -22,6 +23,7 @@ public class SignUP extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
         getSupportActionBar().hide();
+        getWindow().setStatusBarColor(Color.parseColor("#C80303"));
 
         FullName= findViewById(R.id.name_input);
         PassMas=findViewById(R.id.pass_msg);

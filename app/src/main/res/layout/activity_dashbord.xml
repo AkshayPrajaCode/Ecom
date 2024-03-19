@@ -4,32 +4,44 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FDF6F6"
     tools:context=".DashbordActivity">
 
-    <FrameLayout
+   <ScrollView
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
 
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/btoommmmm"
-        android:id="@+id/frame">
-    </FrameLayout>
+       <RelativeLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent">
+
+           <FrameLayout
+               android:layout_alignParentTop="true"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:id="@+id/frame">
+           </FrameLayout>
+
+       </RelativeLayout>
+
+   </ScrollView>
 
     <LinearLayout
         android:id="@+id/btoommmmm"
         android:layout_width="match_parent"
         android:layout_height="45dp"
-        android:background="@color/black"
+        android:background="#C80303"
         android:weightSum="5"
         android:layout_alignParentBottom="true">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:id="@+id/Home"
-        android:text="Home"
-        android:textColor="@color/white"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:id="@+id/Home"
+            android:text="Home"
+            android:textColor="@color/white"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"

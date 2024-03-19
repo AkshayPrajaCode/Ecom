@@ -1,2 +1,6 @@
-package com.example.ecomm.SliderImage;public class ImageSliderModel {
+package com.example.ecomm.SliderImage;
+
+public class ImageSliderModel {
+
+
 }

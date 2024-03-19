@@ -3,6 +3,7 @@ package com.example.ecomm;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -21,6 +22,7 @@ public class login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         getSupportActionBar().hide();
+        getWindow().setStatusBarColor(Color.parseColor("#C80303"));
 
         Signup = findViewById(R.id.signupaccount);
         Login = findViewById(R.id.BtnLogin);

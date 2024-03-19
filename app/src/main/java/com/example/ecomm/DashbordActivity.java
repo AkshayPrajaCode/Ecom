@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -18,7 +19,10 @@ public class DashbordActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashbord);
         getSupportActionBar().hide();
+        getWindow().setStatusBarColor(Color.parseColor("#C80303"));
 
+
+        LoadFragment(new HomeFragment());
 
         findViewById(R.id.Home).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,6 +60,7 @@ public class DashbordActivity extends AppCompatActivity {
         findViewById(R.id.profile).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 LoadFragment(new ProfileFragment());
             }
         });

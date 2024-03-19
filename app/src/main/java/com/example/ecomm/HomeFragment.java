@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.ecomm.Api.ApiClient;
@@ -31,6 +32,7 @@ public class HomeFragment extends Fragment {
     RecyclerView Recy_category;
     GridLayoutManager layoutManager;
     RecylerApadterProduct apadterProduct;
+    ProgressBar progress;
 
     Button btn_products;
     @Override
@@ -41,59 +43,44 @@ public class HomeFragment extends Fragment {
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_home, container, false);
 
-        btn_products = view.findViewById(R.id.btn_products);
         Recy_category = view.findViewById(R.id.Recy_category);
-        btn_products.setOnClickListener(new View.OnClickListener() {
+        progress = view.findViewById(R.id.progress);
+        GetProducts();
+        return view;
+    }
+
+    public void GetProducts()
+    {
+        ServiceApi api = ApiClient.getClient().create(ServiceApi.class);
+        Call<Products_Model> call = api.getProducts();
+
+        call.enqueue(new Callback<Products_Model>() {
             @Override
-            public void onClick(View v) {
+            public void onResponse(Call<Products_Model> call, Response<Products_Model> response) {
 
-                ServiceApi api = ApiClient.getClient().create(ServiceApi.class);
-                Call<Products_Model> call = api.getProducts();
+                if(response.isSuccessful())
+                {
+                    progress.setVisibility(View.GONE);
+                    layoutManager = new GridLayoutManager(getContext(),2);
+                    apadterProduct = new RecylerApadterProduct(getContext(),response.body().getProducts());
 
-                call.enqueue(new Callback<Products_Model>() {
-                    @Override
-                    public void onResponse(Call<Products_Model> call, Response<Products_Model> response) {
+                    Recy_category.setLayoutManager(layoutManager);
+                    Recy_category.setAdapter(apadterProduct);
+                    Recy_category.setHasFixedSize(false);
 
-                        if(response.isSuccessful())
-                        {
-
-                            layoutManager = new GridLayoutManager(getContext(),2);
-                            apadterProduct = new RecylerApadterProduct(getContext(),response.body().getProducts());
-
-                            Recy_category.setLayoutManager(layoutManager);
-                            Recy_category.setAdapter(apadterProduct);
-                            Recy_category.setHasFixedSize(false);
-
-                            Toast.makeText(getContext(), "Suucessfully api hit", Toast.LENGTH_SHORT).show();
-                            for(int i = 0; i<response.body().getProducts().size(); i++)
-                            {
-                                Log.e("TAG", "Brand Name: "+response.body().getProducts().get(i).getBrand() );
-                            }
-
-                        }
+                    Toast.makeText(getContext(), "Suucessfully api hit", Toast.LENGTH_SHORT).show();
+                    for(int i = 0; i<response.body().getProducts().size(); i++)
+                    {
+                        Log.e("TAG", "Brand Name: "+response.body().getProducts().get(i).getBrand() );
                     }
 
-                    @Override
-                    public void onFailure(Call<Products_Model> call, Throwable t) {
-
-                    }
-                });
-
+                }
+            }
+            @Override
+            public void onFailure(Call<Products_Model> call, Throwable t) {
 
             }
         });
-
-
-
-
-
-
-
-
-
-
-        return view;
-
-
     }
+
 }

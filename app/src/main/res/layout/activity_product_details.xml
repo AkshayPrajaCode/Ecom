@@ -1,9 +1,204 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ProductDetails">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <RelativeLayout
+        android:id="@+id/header_design"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="#C80303">
+
+
+        <com.skydoves.elasticviews.ElasticButton
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:background="#00000000"
+            android:text="Back"
+            android:textColor="#ffffff"
+            android:drawableStart="@drawable/baseline_arrow_back_ios_new_24"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="15dp"/>
+
+        <com.skydoves.elasticviews.ElasticImageView
+            android:id="@+id/btn_cart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/share_svgrepo_com"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="15dp"
+            />
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/productNa"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:text="iPhone 9"
+        android:layout_below="@+id/header_design"
+        android:fontFamily="@font/andika"
+        android:textStyle="bold"
+        android:gravity="center_horizontal"
+        android:textColor="#067AD6"
+        android:textSize="14sp"
+        android:layout_marginBottom="2dp"
+        />
+
+
+    <ImageView
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/imageDetails"
+        android:layout_below="@+id/productNa"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:src="@drawable/b"/>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_below="@+id/imageDetails"
+        android:id="@+id/Recy_images"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <RelativeLayout
+        android:id="@+id/detalisNow"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:layout_below="@+id/Recy_images">
+
+
+
+
+        <TextView
+            android:id="@+id/BrandNAme"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:text="Apple "
+            android:fontFamily="@font/andika"
+            android:textStyle="bold"
+            android:textColor="#067AD6"
+            android:textSize="12sp"
+            android:paddingStart="12dp"
+            android:layout_marginBottom="2dp"
+            />
+
+
+
+        <RelativeLayout
+            android:id="@+id/priceProduct"
+            android:layout_below="@+id/BrandNAme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:id="@+id/product_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" Price : ₹234"
+                android:textStyle="bold"
+                android:layout_centerVertical="true"
+                android:layout_alignParentStart="true"
+                android:fontFamily="@font/andika"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                android:paddingStart="10dp"/>
+
+            <TextView
+                android:layout_toRightOf="@+id/product_price"
+                android:id="@+id/product_discount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12%"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/andika"
+                android:textColor="#DF1304"
+                android:paddingStart="10dp"
+                android:textSize="12dp" />
+
+            <TextView
+                android:layout_toRightOf="@+id/product_discount"
+                android:id="@+id/product_rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:text="Rating: 4.5/10"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/andika"
+                android:textColor="#049C0A"
+                android:textSize="12dp" />
+
+            <TextView
+                android:layout_alignParentEnd="true"
+                android:id="@+id/product_stack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Stock: 536"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/andika"
+                android:textColor="#049C0A"
+                android:textSize="12dp"
+                android:paddingEnd="12dp"/>
+
+            <TextView
+                android:layout_marginTop="2dp"
+                android:id="@+id/productDiscription"
+                android:layout_below="@+id/product_rating"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="An apple mobile which is nothing like apple"
+                android:paddingStart="10dp"
+                android:textSize="12sp"
+                android:textColor="#000000"
+                />
+
+        </RelativeLayout>
+
+
+
+
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/price_buy"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <com.skydoves.elasticviews.ElasticButton
+            android:id="@+id/AddToCard"
+            android:layout_width="210dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_orange"
+            android:layout_marginEnd="2dp"
+            android:textColor="#ffff"
+            android:text="WISHLIST"/>
+
+
+        <com.skydoves.elasticviews.ElasticButton
+            android:layout_width="210dp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/AddToCard"
+            android:layout_marginStart="1dp"
+            android:background="@drawable/bg_green"
+            android:textColor="#ffffffff"
+            android:text="ADD TO PRODUCT" />
+
+    </RelativeLayout>
+
+
+
+
+</RelativeLayout>
