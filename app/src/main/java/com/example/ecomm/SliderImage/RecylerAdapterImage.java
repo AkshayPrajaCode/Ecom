@@ -9,14 +9,19 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.ecomm.R;
+
+import java.util.List;
 
 public class RecylerAdapterImage extends RecyclerView.Adapter<RecylerAdapterImage.ViewHolder> {
 
 
     Context context;
-    public RecylerAdapterImage( Context context){
+    List<String> imgList;
+    public RecylerAdapterImage( Context context, List<String> Images){
         this.context= context;
+        this.imgList = Images;
     }
 
 
@@ -29,12 +34,12 @@ public class RecylerAdapterImage extends RecyclerView.Adapter<RecylerAdapterImag
 
     @Override
     public void onBindViewHolder(@NonNull RecylerAdapterImage.ViewHolder holder, int position) {
-
+        Glide.with(context).load(imgList.get(holder.getAdapterPosition()).toString()).into(holder.ImageLoder);
     }
 
     @Override
     public int getItemCount() {
-        return 5;
+        return imgList.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

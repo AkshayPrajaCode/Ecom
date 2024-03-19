@@ -15,6 +15,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.ecomm.Model.Products_Model;
 
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 public class RecylerApadterProduct extends RecyclerView.Adapter<RecylerApadterProduct.viewHolder> {
@@ -49,6 +51,21 @@ public class RecylerApadterProduct extends RecyclerView.Adapter<RecylerApadterPr
             @Override
             public void onClick(View v) {
                 Intent intent= new Intent(context,ProductDetails.class);
+
+                intent.putExtra("titleName",slist.get(holder.getAdapterPosition()).getTitle());
+                intent.putExtra("BrandName",slist.get(holder.getAdapterPosition()).getBrand());
+                intent.putExtra("price",slist.get(holder.getAdapterPosition()).getPrice().toString());
+                intent.putExtra("Stock",slist.get(holder.getAdapterPosition()).getStock().toString());
+                intent.putExtra("Discount",slist.get(holder.getAdapterPosition()).getDiscountPercentage().toString());
+                intent.putExtra("Rating",slist.get(holder.getAdapterPosition()).getRating().toString());
+                intent.putExtra("Description",slist.get(holder.getAdapterPosition()).getDescription());
+                intent.putExtra("Thumbnail",slist.get(holder.getAdapterPosition()).getThumbnail());
+
+                List<String> imagelist = slist.get(holder.getAdapterPosition()).getImages();
+                intent.putExtra("imglist",(Serializable) imagelist);
+
+
+
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intent);
             }
