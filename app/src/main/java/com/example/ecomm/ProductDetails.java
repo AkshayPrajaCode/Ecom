@@ -4,11 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.ecomm.SliderImage.RecylerAdapterImage;
@@ -25,6 +28,9 @@ public class ProductDetails extends AppCompatActivity {
     TextView product_price,product_discount,product_rating,product_stack,productDiscription,titleName,BrandNAme;
 
     TextView minus_decrements,number_sysmbols,plus_increments;
+
+
+    ElasticButton AddToCard,AddtoProducts;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -129,17 +135,39 @@ public class ProductDetails extends AppCompatActivity {
         plus_increments.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!(Integer.parseInt(String.valueOf(number_sysmbols)) > getIntent().getStringExtra("Stock"))) {
-                    number_sysmbols.setText("" + (Integer.parseInt(number_sysmbols.getText().toString()) + 1));
-                } else if (Integer.parseInt(number_sysmbols.getText().toString()) > 0) {
+//                if ((Integer.parseInt(String.valueOf(number_sysmbols)) < Integer.parseInt( getIntent().getStringExtra("Stock"))))
+//                {
+//                    number_sysmbols.setText("" + (Integer.parseInt(number_sysmbols.getText().toString()) + 1));
+//                }
+                if (Integer.parseInt(number_sysmbols.getText().toString()) > 0)
+                {
                     number_sysmbols.setText("" + (Integer.parseInt(number_sysmbols.getText().toString()) + 1));
                 }
             }
         });
 
 
+        //WishList
+        AddToCard=findViewById(R.id.AddToCard);
+        AddToCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(ProductDetails.this, "Open Add to card", Toast.LENGTH_SHORT).show();
+            }
+        });
 
 
+        //AddtoProducts
+        AddtoProducts=findViewById(R.id.AddtoProducts);
+
+        AddtoProducts.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.e("TAG", "onClick:  then open Add to product Activity " );
+                Intent intent = new Intent(getApplication(), Addtoproduct.class);
+                startActivity(intent);
+            }
+        });
 
 
         // Set onClickListener for the back button

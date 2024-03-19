@@ -68,7 +68,7 @@ public class HomeFragment extends Fragment {
                     Recy_category.setAdapter(apadterProduct);
                     Recy_category.setHasFixedSize(false);
 
-                    Toast.makeText(getContext(), "Suucessfully api hit", Toast.LENGTH_SHORT).show();
+                    Log.e("TAG", "Suucessfully api hit " );
                     for(int i = 0; i<response.body().getProducts().size(); i++)
                     {
                         Log.e("TAG", "Brand Name: "+response.body().getProducts().get(i).getBrand() );
