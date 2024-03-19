@@ -3,6 +3,7 @@ package com.example.ecomm;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -14,6 +15,7 @@ public class Introduction extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_introduction);
         getSupportActionBar().hide();
+        getWindow().setStatusBarColor(Color.parseColor("#C80303"));
 
 
 

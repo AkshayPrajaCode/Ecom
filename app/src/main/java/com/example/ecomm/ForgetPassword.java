@@ -3,6 +3,7 @@ package com.example.ecomm;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.icu.number.IntegerWidth;
 import android.os.Bundle;
 import android.util.Log;
@@ -19,6 +20,7 @@ public class ForgetPassword extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forget_password);
         getSupportActionBar().hide();
+        getWindow().setStatusBarColor(Color.parseColor("#C80303"));
         OTP=findViewById(R.id.OTPpaste);
 
         Createe = findViewById(R.id.SetPassword);
@@ -27,7 +29,6 @@ public class ForgetPassword extends AppCompatActivity {
             public void onClick(View v) {
                 Log.e("TAG", "OTP: "+OTP.getText().toString() );
                 if(OTP.getText().toString().isEmpty()){
-                    Toast.makeText(ForgetPassword.this, "OTP", Toast.LENGTH_SHORT).show();
                     return;
                 }
                   else {
