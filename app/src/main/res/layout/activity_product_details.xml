@@ -42,14 +42,15 @@
         android:id="@+id/productNa"
         android:layout_width="match_parent"
         android:layout_height="30dp"
-        android:text="iPhone 9"
         android:layout_below="@+id/header_design"
-        android:fontFamily="@font/andika"
-        android:textStyle="bold"
-        android:gravity="center_horizontal"
-        android:textColor="#067AD6"
-        android:textSize="14sp"
         android:layout_marginBottom="2dp"
+        android:fontFamily="@font/holtwood_one_sc"
+        android:gravity="center_horizontal"
+        android:letterSpacing=".3"
+        android:text="iPhone 9"
+
+        android:textColor="#000000"
+        android:textSize="14sp"
         />
 
 
@@ -60,6 +61,7 @@
         android:layout_below="@+id/productNa"
         android:layout_width="match_parent"
         android:layout_height="250dp"
+
         android:src="@drawable/b"/>
 
 
@@ -170,33 +172,38 @@
 
 
     </RelativeLayout>
-    <RelativeLayout
+    <LinearLayout
         android:id="@+id/price_buy"
         android:orientation="horizontal"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:weightSum="2"
         android:layout_alignParentBottom="true">
 
         <com.skydoves.elasticviews.ElasticButton
             android:id="@+id/AddToCard"
-            android:layout_width="210dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/bg_orange"
             android:layout_marginEnd="2dp"
+            android:minWidth="150dp"
+            android:layout_weight="1"
             android:textColor="#ffff"
             android:text="WISHLIST"/>
 
 
         <com.skydoves.elasticviews.ElasticButton
-            android:layout_width="210dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@+id/AddToCard"
             android:layout_marginStart="1dp"
             android:background="@drawable/bg_green"
+            android:minWidth="150dp"
+            android:layout_weight="1"
             android:textColor="#ffffffff"
             android:text="ADD TO PRODUCT" />
 
-    </RelativeLayout>
+    </LinearLayout>
 
 
 
