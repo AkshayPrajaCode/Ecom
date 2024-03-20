@@ -8,8 +8,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 public class MainActivity extends AppCompatActivity {
-    Button ClickBTN;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,14 +21,17 @@ public class MainActivity extends AppCompatActivity {
         getWindow().setNavigationBarColor(Color.parseColor("#ffe0e0"));
 
         setContentView(R.layout.activity_main);
-        ClickBTN=findViewById(R.id.ClickBtn);
 
-        ClickBTN.setOnClickListener(new View.OnClickListener() {
+
+        new Timer().schedule(new TimerTask() {
             @Override
-            public void onClick(View view) {
+            public void run() {
                 Intent intent = new Intent(getApplicationContext(),Introduction.class);
                 startActivity(intent);
+                finish();
             }
-        });
+        },2000);
+
+
     }
 }

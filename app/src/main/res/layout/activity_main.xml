@@ -9,19 +9,12 @@
     tools:context=".MainActivity">
 
 
-
-
-        <com.skydoves.elasticviews.ElasticButton
-            android:id="@+id/ClickBtn"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_centerInParent="true"
-            android:layout_marginBottom="20dp"
-            android:background="#24ace2"
-            android:gravity="center"
-            android:text="Click"
-            app:button_cornerRadius="20dp" />
+        <ImageView
+            android:id="@+id/logoIDImage"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+                android:src="@drawable/logo_png"
+                android:layout_centerInParent="true"/>
 
 
 </RelativeLayout>
