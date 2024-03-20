@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -22,15 +23,21 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
-
+        //Timer that show to next Activity in That time
+        //Timer Function with loader
         new Timer().schedule(new TimerTask() {
             @Override
             public void run() {
                 Intent intent = new Intent(getApplicationContext(),Introduction.class);
                 startActivity(intent);
                 finish();
+
+                Log.e("TAG", "run: Go to one Activity to another Activity With the help of Timer function" );
             }
-        },2000);
+        },1500);
+
+
+
 
 
     }
