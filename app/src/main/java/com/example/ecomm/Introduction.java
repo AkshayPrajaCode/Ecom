@@ -13,11 +13,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.example.ecomm.Adapter.ImagePagerAdapter;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 
-public class Introduction extends AppCompatActivity {
+public class  Introduction extends AppCompatActivity {
     Button getStart;
     ViewPager viewPager;
     LinearLayout dotsLayout;
@@ -72,7 +73,7 @@ public class Introduction extends AppCompatActivity {
             public void onPageScrollStateChanged(int state) {
             }
         });
-
+        addDotsIndicator(1);
         // Auto-scroll the ViewPager
         final Handler handler = new Handler(Looper.getMainLooper());
         handler.postDelayed(new Runnable() {

@@ -21,6 +21,8 @@ public class ForgetPassword extends AppCompatActivity {
         setContentView(R.layout.activity_forget_password);
         getSupportActionBar().hide();
         getWindow().setStatusBarColor(Color.parseColor("#C80303"));
+
+        getWindow().setNavigationBarColor(Color.parseColor("#ffe0e0"));
         OTP=findViewById(R.id.OTPpaste);
 
         Createe = findViewById(R.id.SetPassword);
