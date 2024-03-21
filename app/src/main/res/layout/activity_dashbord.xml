@@ -7,7 +7,7 @@
     android:background="#FDF6F6"
     tools:context=".DashbordActivity">
 
-   <ScrollView
+   <androidx.core.widget.NestedScrollView
        android:layout_width="match_parent"
        android:layout_height="match_parent">
 
@@ -24,7 +24,7 @@
 
        </RelativeLayout>
 
-   </ScrollView>
+   </androidx.core.widget.NestedScrollView>
 
     <LinearLayout
         android:id="@+id/btoommmmm"
@@ -34,46 +34,82 @@
         android:weightSum="5"
         android:layout_alignParentBottom="true">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
+
+        <LinearLayout
             android:id="@+id/Home"
-            android:text="Home"
-            android:textColor="@color/white"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:id="@+id/shop"
-            android:text="Shop"
-            android:textColor="@color/white"/>
-        <TextView
-            android:id="@+id/Account"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:padding="10dp"
+                android:layout_height="40dp"
+                android:src="@drawable/iconmonstr_home_7"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/categories_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="Account"
-            android:textColor="@color/white"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:padding="10dp"
+                android:src="@drawable/fg" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/Account_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="card"
-            android:id="@+id/card"
-            android:textColor="@color/white"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:src="@drawable/account"
+                android:padding="10dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/card_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:id="@+id/profile"
-            android:text="profile"
-            android:textColor="@color/white"/>
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:padding="10dp"
+                android:src="@drawable/baseline_add_shopping_cart_24"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/Notification_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:padding="10dp"
+                android:src="@drawable/notification"/>
+        </LinearLayout>
+
 
     </LinearLayout>
 

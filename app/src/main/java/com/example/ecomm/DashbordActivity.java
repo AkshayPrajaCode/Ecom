@@ -7,6 +7,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -21,6 +22,9 @@ public class DashbordActivity extends AppCompatActivity {
         getSupportActionBar().hide();
         getWindow().setStatusBarColor(Color.parseColor("#C80303"));
 
+        //Navigation BAr
+        getWindow().setNavigationBarColor(Color.parseColor("#C80303"));
+
 
         LoadFragment(new HomeFragment());
 
@@ -28,44 +32,56 @@ public class DashbordActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 LoadFragment(new HomeFragment());
-                Toast.makeText(DashbordActivity.this, "Home", Toast.LENGTH_SHORT).show();
+                Log.e("TAG", "onClick: Home" );
 
             }
         });
 
-        findViewById(R.id.shop).setOnClickListener(new View.OnClickListener() {
+        //Categories
+        findViewById(R.id.categories_icon).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 LoadFragment(new ShopFragment());
-                Toast.makeText(DashbordActivity.this, "Home", Toast.LENGTH_SHORT).show();
-
+                Log.e("TAG", "onClick: categories_icon" );
             }
         });
 
-        findViewById(R.id.Account).setOnClickListener(new View.OnClickListener() {
+        //Account
+        findViewById(R.id.Account_icon).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                LoadFragment(new AcountFragment());
-                Toast.makeText(DashbordActivity.this, "Account", Toast.LENGTH_SHORT).show();
+                LoadFragment(new ProfileFragment());
+                Log.e("TAG", "onClick: Account_icon" );
             }
         });
 
-        findViewById(R.id.card).setOnClickListener(new View.OnClickListener() {
+
+        //Shopping Cart Fragment
+
+        findViewById(R.id.card_icon).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 LoadFragment(new CardFragment());
+                Log.e("TAG", "onClick: card_icon" );
             }
         });
 
-        findViewById(R.id.profile).setOnClickListener(new View.OnClickListener() {
+
+
+        //Notification
+
+
+        findViewById(R.id.Notification_icon).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                LoadFragment(new ProfileFragment());
+                LoadFragment(new AcountFragment());
+                Log.e("TAG", "onClick: Notification_icon" );
             }
         });
+
     }
 
+        //loadfragement method
         public void LoadFragment(Fragment fragment){
             FragmentManager fragmentManager = getSupportFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();

@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@drawable/bg_body"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".BuyNow">
+
+    <RelativeLayout
+        android:id="@+id/header_design"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="#C80303">
+
+
+        <com.skydoves.elasticviews.ElasticButton
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:background="#00000000"
+            android:text="Order Summary"
+            android:textColor="#ffffff"
+            android:drawableStart="@drawable/baseline_arrow_back_ios_new_24"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="15dp"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/main_body_part"
+        android:layout_above="@+id/bottom"
+        android:layout_below="@+id/header_design"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingStart="10dp"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/details_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp"
+            android:paddingStart="10dp"
+            android:layout_marginBottom="10dp"
+            >
+
+            <TextView
+                android:id="@+id/Deliver_to"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/jetbrains_mono_bold"
+                android:text="Deliver to : "
+                android:textColor="#000000"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+
+
+            <TextView
+                android:id="@+id/your_name"
+                android:layout_below="@id/Deliver_to"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:text="Akshay Kumar Prajapati"
+                android:fontFamily="@font/jetbrains_mono_bold"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/work_details"
+                android:layout_width="60dp"
+              android:layout_marginStart="10dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/Deliver_to"
+                android:layout_toRightOf="@id/your_name"
+                android:text="WORK"
+                android:textColor="#FFFFFF"
+                android:background="@drawable/bd_work"
+                android:textAlignment="center"
+                android:textSize="12sp"
+                android:padding="2dp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/Deliver_to_Address"
+                android:layout_below="@+id/work_details"
+                android:layout_width="match_parent"
+                android:paddingStart="10dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Lowadih Chowk , Ranchi, Mahavir Mandir, Lagan Bari\n Ranchi 834001"
+                    android:textColor="#000000"
+                    android:textSize="12sp"
+                    android:layout_margin="4dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    android:text="6200305994"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingEnd="20dp">
+
+                    <TextView
+                        android:layout_marginTop="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="EDIT OR ADD ADDRESS"
+                        android:textColor="#3D1CCA"
+                        android:textStyle="bold"
+                        android:textSize="14sp"
+                        android:textAlignment="center"
+                        android:background="@drawable/bg_edit"
+                        android:padding="10dp"/>
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+
+
+        </RelativeLayout>
+
+
+
+
+
+
+        </RelativeLayout>
+
+   <LinearLayout
+       android:id="@+id/bottom"
+       android:layout_alignParentBottom="true"
+       android:layout_width="match_parent"
+       android:layout_height="40dp"
+       android:weightSum="2"
+       android:orientation="horizontal"
+      >
+       <TextView
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:layout_gravity="center"
+           android:gravity="center"
+           android:layout_weight="1"
+           android:text="₹ 999"
+           android:textStyle="bold"
+           android:background="@drawable/bg_body2"
+           android:textColor="#2C28C3"
+           android:textSize="16sp"
+           android:textAlignment="center"
+           />
+
+       <TextView
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:layout_gravity="center"
+           android:gravity="center"
+           android:layout_weight="1"
+           android:textColor="@color/white"
+           android:textSize="12sp"
+           android:textStyle="bold"
+           android:background="@drawable/bg_payment"
+           android:text="PROCEED TO PAYMENT "
+           android:padding="4dp"/>
+   </LinearLayout>
+
+
+    </RelativeLayout>
+
+

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -30,8 +31,9 @@ public class ProductDetails extends AppCompatActivity {
     TextView minus_decrements,number_sysmbols,plus_increments;
 
 
-    ElasticButton AddToCard,AddtoProducts;
+    ElasticButton AddToCard,Buy_product;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,6 +60,9 @@ public class ProductDetails extends AppCompatActivity {
         number_sysmbols= findViewById(R.id.number_sysmbols);
         plus_increments= findViewById(R.id.plus_increments);
 
+
+
+        Buy_product=findViewById(R.id.Buy_product);
 
 
 
@@ -157,18 +162,19 @@ public class ProductDetails extends AppCompatActivity {
         });
 
 
-        //AddtoProducts
-        AddtoProducts=findViewById(R.id.AddtoProducts);
-
-        AddtoProducts.setOnClickListener(new View.OnClickListener() {
+        //Buy Now
+        Buy_product.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.e("TAG", "onClick:  then open Add to product Activity " );
-                Intent intent = new Intent(getApplication(), Addtoproduct.class);
+
+                Intent intent=new Intent(getApplication(), BuyNow.class);
                 startActivity(intent);
+                Toast.makeText(ProductDetails.this, "Buy Product", Toast.LENGTH_SHORT).show();
+                Log.e("TAG", "onClick: Buy the Product" );
             }
         });
-
+       
+        
 
         // Set onClickListener for the back button
         arrowBack.setOnClickListener(new View.OnClickListener() {
